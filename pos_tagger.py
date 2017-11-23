@@ -1,4 +1,5 @@
 import nltk
+import pickle
 from nltk.corpus import treebank
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.feature_extraction import DictVectorizer
@@ -55,6 +56,11 @@ def transform_to_dataset(tagged_sents):
 
   return X, y
 
+def load_pos_tagger():
+  model_pkl = open('./Data/models/pos_tagger_dt.pkl', 'rb')
+  clf = pickle.load(model_pkl)
+  return clf
+
 """
 """
 def train_pos_tagger():
@@ -72,11 +78,16 @@ def train_pos_tagger():
   ])
 
   print('Training started')
-  clf.fit(X[:10000], y[:10000])
+  clf.fit(X, y)
   print('Training finished')
 
   X_test, y_test = transform_to_dataset(test_sents)
   print('Accuracy: {}'.format(clf.score(X_test, y_test)))
+
+  # Save model to file
+  model_pkl = open('./Data/models/pos_tagger_dt.pkl', 'wb')
+  pickle.dump(clf, model_pkl)
+  model_pkl.close()
 
 if __name__ == '__main__':
   train_pos_tagger()
