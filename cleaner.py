@@ -1,4 +1,5 @@
 import re
+from nltk.corpus import stopwords
 
 """
 Function to clean text from parts like
@@ -40,3 +41,16 @@ def delete_tags(text):
       text = re.sub(t, '', text, re.M)
 
   return text
+
+"""
+From a list of words removes the English stopwords
+"""
+def del_stopwords(words):
+  without_stopwords = []
+  stop_words = stopwords.words('english')
+
+  for word in words:
+        if word not in stop_words:
+            without_stopwords.append(word)
+
+  return without_stopwords
