@@ -6,6 +6,13 @@ from os.path import isfile, join
 from mail import Email
 from cleaner import clean
 
+"""
+Splits the raw text of all the emails read
+into Email objects and returns a list of them
+
+text: All the emails read, combined into one big string
+fileids: The fileid of the emails, in order of reading
+"""
 def split_emails(text, fileids):
   emails = []
   reg_header = r'<.*?@.*?>\nType'
@@ -34,10 +41,10 @@ def split_emails(text, fileids):
   return emails
 
 """
-Reads the files and returns the name of the files and the corpus
-as WordListCorpusReader object
+Reads the files and returns the name parsed into
+Email objects
 """
-def read_corpus(path):
+def read_emails(path):
   files = [f for f in listdir(path) if isfile(join(path, f))]
 
   try:

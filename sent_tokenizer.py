@@ -1,7 +1,11 @@
 from nltk.corpus import gutenberg
 from nltk.tokenize.punkt import PunktSentenceTokenizer, PunktTrainer
 
-def train_sent_tokenizer(text):
+"""
+Train custom sentence tokenizer on gutenberg corpus
+"""
+def train_sent_tokenizer():
+  text = gutenberg.raw()
   trainer = PunktTrainer()
   trainer.INCLUDE_ALL_COLLOCS = True
   trainer.train(text)
@@ -11,5 +15,11 @@ def train_sent_tokenizer(text):
 
   return PunktSentenceTokenizer(trainer.get_params())
 
-def sent_tokenizer(tokenizer, text):
+"""
+Splits a text into sentences and returns a list of them
+"""
+def tokenize_sents(text, tokenizer=None):
+  if tokenizer == None:
+    tokenizer = train_sent_tokenizer()
+
   return tokenizer.tokenize(text)

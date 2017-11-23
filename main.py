@@ -1,6 +1,9 @@
-from io_manager import read_corpus
+from io_manager import read_emails
 
 if __name__ == '__main__':
+  testing = True # Indicates whether in testing mode or not
+  save = False # Indicates whether it should save the produced output or not
+  path_train = './Data/training/'
 
-  path = './Data/training/'
-  emails = read_corpus(path)
+  # Read training data
+  emails_train = read_emails(path_train)

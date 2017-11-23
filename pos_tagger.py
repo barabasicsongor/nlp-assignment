@@ -5,8 +5,12 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.feature_extraction import DictVectorizer
 from sklearn.pipeline import Pipeline
 
+POS_TAGGER_PATH = './Data/models/pos_tagger_dt.pkl'
+
 """
-Returns detail about the given word
+Returns detail about the given word.
+We use these details for classification
+with the DecisionTree.
 
 sentence: [word1, word2, ...], 
 index: the index of the word 
@@ -56,14 +60,20 @@ def transform_to_dataset(tagged_sents):
 
   return X, y
 
+"""
+Loads the POS tag classifier from file
+"""
 def load_pos_tagger():
-  model_pkl = open('./Data/models/pos_tagger_dt.pkl', 'rb')
+  model_pkl = open(POS_TAGGER_PATH, 'rb')
   clf = pickle.load(model_pkl)
   return clf
 
 """
+Trains the POS tag classifier on the treebank corpus 
+and returns it.
+If save == True, then the classifier is saved to file
 """
-def train_pos_tagger():
+def train_pos_tagger(save):
   tagged_sents = treebank.tagged_sents()
 
   train_size = int(.75 * len(tagged_sents))
@@ -81,13 +91,13 @@ def train_pos_tagger():
   clf.fit(X, y)
   print('Training finished')
 
-  X_test, y_test = transform_to_dataset(test_sents)
-  print('Accuracy: {}'.format(clf.score(X_test, y_test)))
+  # X_test, y_test = transform_to_dataset(test_sents)
+  # print('Accuracy: {}'.format(clf.score(X_test, y_test)))
 
   # Save model to file
-  model_pkl = open('./Data/models/pos_tagger_dt.pkl', 'wb')
-  pickle.dump(clf, model_pkl)
-  model_pkl.close()
+  if save:
+    model_pkl = open(POS_TAGGER_PATH, 'wb')
+    pickle.dump(clf, model_pkl)
+    model_pkl.close()
 
-if __name__ == '__main__':
-  train_pos_tagger()
+  return clf
