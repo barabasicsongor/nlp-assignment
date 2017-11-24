@@ -4,8 +4,6 @@ from nltk.tokenize import sent_tokenize
 """
 Tag sentences by splitting the body of the text in sentences
 using the sentence tokenizer from NLTK.
-
-TODO: Change the inbuild sentence tokenizer to my custom one. First test how mine works.
 """
 def tag_sents(email):
   # Remove the 'Abstract:' part
