@@ -2,7 +2,6 @@ from mail import Email
 
 """
 Tag paragraphs by seeing where is more than one '\n' character
-TODO: Handle when there are more than 2 newline characters
 """
 def tag_paragraphs(email):
   body = email.body[9:].strip()
@@ -12,6 +11,6 @@ def tag_paragraphs(email):
   body = "Abstract:\n"
 
   for s in body_split:
-    body += '<paragraph>' + s + '</paragraph>'
+    body += '<paragraph>' + s.strip() + '</paragraph>'
 
   return Email(email.header, body, email.fileid)
