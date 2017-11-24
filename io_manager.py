@@ -58,3 +58,16 @@ def read_emails(path):
   emails = split_emails(text, reader.fileids())
 
   return emails
+
+"""
+Writes the Emails to the indicated path
+using the original filenames from the
+fileid property of Email
+"""
+def write_emails(emails, path):
+  for email in emails:
+    text = email.header + '\n' + email.body
+    fpath = join(path, email.fileid)
+    file = open(fpath, 'w')
+    file.write(text)
+    file.close()
