@@ -1,12 +1,18 @@
 import re
+from cleaner import delete_tags
 
+"""
+Extracts all the tags in the text, and returns
+a dictionary of arrays.
+
+"""
 def extract_tags(text):
   regex = {
       'time': r'<[s|e]time>.*?</[s|e]time>',
       'speaker': r'<speaker>.*?</speaker>',
-      'paragraph': r'<paragraph>.*?</paragraph>',
+      'location': r'<location>.*?</location>',
       'sentence': r'<sentence>.*?</sentence>',
-      'location': r'<location>.*?</location>'
+      'paragraph': r'<paragraph>.*?</paragraph>'
   }
 
   tags = {}
@@ -14,5 +20,7 @@ def extract_tags(text):
 
   for k in regex.keys():
     tags[k] = re.findall(regex[k], text, re.M)
+    for i in range(0,len(tags[k])):
+      tags[k][i] = delete_tags(tags[k][i])
 
   return tags
