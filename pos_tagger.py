@@ -91,8 +91,8 @@ def train_pos_tagger(save):
   clf.fit(X, y)
   print('Training finished')
 
-  # X_test, y_test = transform_to_dataset(test_sents)
-  # print('Accuracy: {}'.format(clf.score(X_test, y_test)))
+  X_test, y_test = transform_to_dataset(test_sents)
+  print('Accuracy: {}'.format(clf.score(X_test, y_test)))
 
   # Save model to file
   if save:
