@@ -7,7 +7,7 @@ from sklearn.linear_model import Perceptron
 from sklearn.feature_extraction import DictVectorizer
 from sklearn.pipeline import Pipeline
 
-class ScikitLearnChunker(ChunkParserI):
+class NERTagger(ChunkParserI):
 
   def __init__(self, feature_detector, classifier=None):
     self._classifier = classifier
@@ -87,7 +87,7 @@ class ScikitLearnChunker(ChunkParserI):
       history.append(iob_tag)
       iob_tagged_tokens.append((word, tag, iob_tag))
     
-    return iob_tagged_tokens
+    return conlltags2tree(iob_tagged_tokens)
 
   def score(self, parsed_sentences):
     """
