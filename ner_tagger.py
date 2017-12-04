@@ -66,8 +66,6 @@ class ScikitLearnChunker(ChunkParserI):
 
     self._classifier = clf
 
-    return clf
-
   """
   Loads the NER tagger classifier from file
   """
@@ -75,13 +73,12 @@ class ScikitLearnChunker(ChunkParserI):
     model_pkl = open(path, 'rb')
     clf = pickle.load(model_pkl)
     self._classifier = clf
-    return clf
 
   def parse(self, tokens):
     """
     Chunk a tagged sentence
     tokens = list of words [(w1,t1) ...]
-    return: chunked sentence nltk.Tree
+    return: chunked sentence in IOB format
     """
     history = []
     iob_tagged_tokens = []
@@ -90,7 +87,7 @@ class ScikitLearnChunker(ChunkParserI):
       history.append(iob_tag)
       iob_tagged_tokens.append((word, tag, iob_tag))
     
-    return conlltags2tree(iob_tagged_tokens)
+    return iob_tagged_tokens
 
   def score(self, parsed_sentences):
     """
