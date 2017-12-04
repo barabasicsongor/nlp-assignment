@@ -13,9 +13,8 @@ class POSTagger:
     self.classifier = None
 
   """
-  Returns detail about the given word.
-  We use these details for classification
-  with the DecisionTree.
+  Features of a word used for classification
+  with the Decision Tree.
 
   sentence: [word1, word2, ...], 
   index: the index of the word 
@@ -50,8 +49,8 @@ class POSTagger:
 
   """
   Transforms the training tagged sentences to dataset format
-  X: contains list of word_features of each word of the text
-  y: contains the expected POS tag for each word
+  X: list of word features
+  y: expected POS tag
   """
   def transform_to_dataset(self,tagged_sents):
     X, y = [], []
