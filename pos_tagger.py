@@ -7,97 +7,110 @@ from sklearn.pipeline import Pipeline
 
 POS_TAGGER_PATH = './Data/models/pos_tagger_dt.pkl'
 
-"""
-Returns detail about the given word.
-We use these details for classification
-with the DecisionTree.
+class POSTagger:
 
-sentence: [word1, word2, ...], 
-index: the index of the word 
-"""
-def word_features(sentence, index):
-  return {
-    'word': sentence[index],
-    'is_first': index == 0,
-    'is_last': index == len(sentence) - 1,
-    'is_capitalized': sentence[index][0].upper() == sentence[index][0],
-    'is_all_caps': sentence[index].upper() == sentence[index],
-    'is_all_lower': sentence[index].lower() == sentence[index],
-    'prefix-1': sentence[index][0],
-    'prefix-2': sentence[index][:2],
-    'prefix-3': sentence[index][:3],
-    'suffix-1': sentence[index][-1],
-    'suffix-2': sentence[index][-2:],
-    'suffix-3': sentence[index][-3:],
-    'prev_word': '' if index == 0 else sentence[index - 1],
-    'next_word': '' if index == len(sentence) - 1 else sentence[index + 1],
-    'has_hyphen': '-' in sentence[index],
-    'is_numeric': sentence[index].isdigit(),
-    'capitals_inside': sentence[index][1:].lower() != sentence[index][1:]
-  }
+  def __init__(self):
+    self.classifier = None
 
-"""
-Untags a sentence by extracting the words from the 
-list of tuples (word, tag)
-"""
-def untag(tagged_sent):
-  return [w for w, t in tagged_sent]
+  """
+  Returns detail about the given word.
+  We use these details for classification
+  with the DecisionTree.
 
-"""
-Transforms the training tagged sentences to dataset format
-X: contains list of word_features of each word of the text
-y: contains the expected POS tag for each word
-"""
-def transform_to_dataset(tagged_sents):
-  X, y = [], []
+  sentence: [word1, word2, ...], 
+  index: the index of the word 
+  """
+  def word_features(self,sentence, index):
+    return {
+      'word': sentence[index],
+      'is_first': index == 0,
+      'is_last': index == len(sentence) - 1,
+      'is_capitalized': sentence[index][0].upper() == sentence[index][0],
+      'is_all_caps': sentence[index].upper() == sentence[index],
+      'is_all_lower': sentence[index].lower() == sentence[index],
+      'prefix-1': sentence[index][0],
+      'prefix-2': sentence[index][:2],
+      'prefix-3': sentence[index][:3],
+      'suffix-1': sentence[index][-1],
+      'suffix-2': sentence[index][-2:],
+      'suffix-3': sentence[index][-3:],
+      'prev_word': '' if index == 0 else sentence[index - 1],
+      'next_word': '' if index == len(sentence) - 1 else sentence[index + 1],
+      'has_hyphen': '-' in sentence[index],
+      'is_numeric': sentence[index].isdigit(),
+      'capitals_inside': sentence[index][1:].lower() != sentence[index][1:]
+    }
 
-  for tagged in tagged_sents:
-    untagged = untag(tagged)
+  """
+  Untags a sentence by extracting the words from the 
+  list of tuples (word, tag)
+  """
+  def untag(self,tagged_sent):
+    return [w for w, t in tagged_sent]
 
-    for index in range(len(tagged)):
-      X.append(word_features(untagged, index))
-      y.append(tagged[index][1])
+  """
+  Transforms the training tagged sentences to dataset format
+  X: contains list of word_features of each word of the text
+  y: contains the expected POS tag for each word
+  """
+  def transform_to_dataset(self,tagged_sents):
+    X, y = [], []
 
-  return X, y
+    for tagged in tagged_sents:
+      untagged = untag(tagged)
 
-"""
-Loads the POS tag classifier from file
-"""
-def load_pos_tagger():
-  model_pkl = open(POS_TAGGER_PATH, 'rb')
-  clf = pickle.load(model_pkl)
-  return clf
+      for index in range(len(tagged)):
+        X.append(word_features(untagged, index))
+        y.append(tagged[index][1])
 
-"""
-Trains the POS tag classifier on the treebank corpus 
-and returns it.
-If save == True, then the classifier is saved to file
-"""
-def train_pos_tagger(save):
-  tagged_sents = treebank.tagged_sents()
+    return X, y
 
-  train_size = int(.75 * len(tagged_sents))
-  training_sents = tagged_sents[:train_size]
-  test_sents = tagged_sents[train_size:]
+  """
+  Loads the POS tag classifier from file
+  """
+  def load_pos_tagger(self):
+    model_pkl = open(POS_TAGGER_PATH, 'rb')
+    clf = pickle.load(model_pkl)
+    self.classifier = clf
 
-  X, y = transform_to_dataset(training_sents)
+  """
+  Trains the POS tag classifier on the treebank corpus 
+  and returns it.
+  If save == True, then the classifier is saved to file
+  """
+  def train_pos_tagger(self,save):
+    tagged_sents = treebank.tagged_sents()
 
-  clf = Pipeline([
-    ('vectorizer', DictVectorizer(sparse=False)),
-    ('classifier', DecisionTreeClassifier(criterion="entropy"))
-  ])
+    train_size = int(.75 * len(tagged_sents))
+    training_sents = tagged_sents[:train_size]
+    test_sents = tagged_sents[train_size:]
 
-  print('Training started')
-  clf.fit(X, y)
-  print('Training finished')
+    X, y = transform_to_dataset(training_sents)
 
-  X_test, y_test = transform_to_dataset(test_sents)
-  print('Accuracy: {}'.format(clf.score(X_test, y_test)))
+    clf = Pipeline([
+      ('vectorizer', DictVectorizer(sparse=False)),
+      ('classifier', DecisionTreeClassifier(criterion="entropy"))
+    ])
 
-  # Save model to file
-  if save:
-    model_pkl = open(POS_TAGGER_PATH, 'wb')
-    pickle.dump(clf, model_pkl)
-    model_pkl.close()
+    print('Training started')
+    clf.fit(X, y)
+    print('Training finished')
 
-  return clf
+    X_test, y_test = transform_to_dataset(test_sents)
+    print('Accuracy: {}'.format(clf.score(X_test, y_test)))
+
+    # Save model to file
+    if save:
+      model_pkl = open(POS_TAGGER_PATH, 'wb')
+      pickle.dump(clf, model_pkl)
+      model_pkl.close()
+
+    self.classifier = clf
+
+    return clf
+
+  def predict(self,sentence):
+    tagged_sentence = []
+    tags = self.classifier.predict([self.word_features(sentence, index) for index in range(len(sentence))])
+
+    return zip(sentence, tags)
