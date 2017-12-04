@@ -1,5 +1,10 @@
 import re
+import string
 from mail import Email
+from nltk import sent_tokenize, word_tokenize
+from pos_tagger import POSTagger
+from ner_tagger import NERTagger
+from ner_tagger_io import ner_features
 
 
 """
@@ -39,5 +44,23 @@ def tag_location(email):
     pass
 
   # Use NER Tagger for tagging
+  pos = POSTagger()
+  pos.load_pos_tagger()
+
+  chunker = NERTagger(ner_features)
+  chunker.load_ner_tagger('./Data/models/ner_tagger.pkl')
+
+  body = email.body
+  body = [list(pos.predict(word_tokenize(s))) for s in sent_tokenize(body)]
+  body = [chunker.parse(s) for s in body]
+  
+  for t in body:
+    for c in t:
+      if hasattr(c,'label'):
+        print(c.label())
+        # s = ''
+        # for x in c:
+        #   s += x[0]
+        # print(s)
 
   return Email(header, body, email.fileid)
