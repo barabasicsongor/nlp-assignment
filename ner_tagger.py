@@ -38,7 +38,7 @@ class NERTagger(ChunkParserI):
 
     return X, y
 
-  def train(self, parsed_sentences, path=None, **kwargs):
+  def train(self, parsed_sentences, path, **kwargs):
     all_classes = ['O', 'B-per', 'I-per', 'B-gpe', 'I-gpe',
                    'B-geo', 'I-geo', 'B-org', 'I-org', 'B-tim', 'I-tim',
                    'B-art', 'I-art', 'B-eve', 'I-eve', 'B-nat', 'I-nat']

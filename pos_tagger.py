@@ -56,10 +56,10 @@ class POSTagger:
     X, y = [], []
 
     for tagged in tagged_sents:
-      untagged = untag(tagged)
+      untagged = self.untag(tagged)
 
       for index in range(len(tagged)):
-        X.append(word_features(untagged, index))
+        X.append(self.word_features(untagged, index))
         y.append(tagged[index][1])
 
     return X, y
@@ -84,7 +84,7 @@ class POSTagger:
     training_sents = tagged_sents[:train_size]
     test_sents = tagged_sents[train_size:]
 
-    X, y = transform_to_dataset(training_sents)
+    X, y = self.transform_to_dataset(training_sents)
 
     clf = Pipeline([
       ('vectorizer', DictVectorizer(sparse=False)),

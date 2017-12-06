@@ -3,8 +3,6 @@ import re
 from nltk.stem.snowball import SnowballStemmer
 from nltk import conlltags2tree
 
-GMB_CORPUS_ROOT = './Data/gmb-2.2.0'
-
 stemmer = SnowballStemmer('english')
 
 def to_conll_iob(annotated_sentence):
