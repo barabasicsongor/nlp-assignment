@@ -43,24 +43,15 @@ def tag_location(email):
   except:
     pass
 
-  # Use NER Tagger for tagging
-  pos = POSTagger()
-  pos.load_pos_tagger()
-
-  chunker = NERTagger(ner_features)
-  chunker.load_ner_tagger('./Data/models/ner_tagger.pkl')
+  file = open('./Data/locations.txt', 'r')
+  locations = file.readlines()
+  locations = [x.strip() for x in locations]
 
   body = email.body
-  body = [list(pos.predict(word_tokenize(s))) for s in sent_tokenize(body)]
-  body = [chunker.parse(s) for s in body]
-  
-  for t in body:
-    for c in t:
-      if hasattr(c,'label'):
-        print(c.label())
-        # s = ''
-        # for x in c:
-        #   s += x[0]
-        # print(s)
+
+  for l in locations:
+    if l in body:
+      loc = '<location>' + l + '</location>'
+      body = body.sub(l,loc,body)
 
   return Email(header, body, email.fileid)
