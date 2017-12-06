@@ -77,7 +77,7 @@ class POSTagger:
   and returns it.
   If save == True, then the classifier is saved to file
   """
-  def train_pos_tagger(self,save):
+  def train_pos_tagger(self):
     tagged_sents = treebank.tagged_sents()
 
     train_size = int(.75 * len(tagged_sents))
@@ -99,14 +99,11 @@ class POSTagger:
     print('Accuracy: {}'.format(clf.score(X_test, y_test)))
 
     # Save model to file
-    if save:
-      model_pkl = open(POS_TAGGER_PATH, 'wb')
-      pickle.dump(clf, model_pkl)
-      model_pkl.close()
+    model_pkl = open(POS_TAGGER_PATH, 'wb')
+    pickle.dump(clf, model_pkl)
+    model_pkl.close()
 
     self.classifier = clf
-
-    return clf
 
   def predict(self,sentence):
     tagged_sentence = []
