@@ -1,0 +1,34 @@
+<0.13.9.93.13.33.51.plp+@PHYLLIS.ADM.CS.CMU.EDU (Phyllis Pomerantz).0>
+Type:     cmu.cs.scs
+Who:      Ron P. Loui
+          Deptartment of Computer Science
+          Washington University, St. Louis
+Topic:    Special AI Seminar
+Dates:    21Sep93
+Time:     <stime>3:30 PM</stime>
+Host:     <speaker>Bob Carpenter</speaker> 
+PostedBy: plp+ on 13Sep93 at 13:33 from PHYLLIS.ADM.CS.CMU.EDU (Phyllis Pomerantz)
+Abstract: 
+ <paragraph>Speaker:
+ Ron P. Loui
+ Deptartment of Computer Science
+ Washington University, St. Louis</paragraph>
+
+<paragraph>September 21, 1993
+<stime>3:30 p.m</stime>.
+<location>4623 Wean Hall</location>
+ARGUMENT AND ARBITRATION GAMES</paragraph>
+
+<paragraph>We begin with two points about modeling reasoning that Herbert Simon
+and Nicholas Rescher made well, but which were lost in the AI shuffle:
+1) rational belief can be constructed by the right kind of
+resourcebounded process; 2) dialectic is one of the right kinds of
+process.  A protocol for disputation is essentially a model of an
+automated reasoner's search procedure.</paragraph>
+
+<paragraph>We describe programs and card games which model casebased legal
+argument and reasoned settlement.</paragraph>
+
+ Host: <speaker>Bob Carpenter</speaker> 
+For Further Details and appointments contact: (carp@lcl.cmu.edu)
+ phone: x88043 or (fax: 2681440)

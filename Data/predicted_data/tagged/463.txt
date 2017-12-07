@@ -1,0 +1,14 @@
+<0.05.12.91.08.50.06.valdes+@CS.CMU.EDU (Raul ValdesPerez).0>
+Type:     cmu.cs.scs
+Topic:    Re: Seminar notice (STC)
+Dates:    6Dec91
+Time:     <stime>4:00 PM</stime>
+PostedBy: valdes+ on 05Dec91 at 08:50 from CS.CMU.EDU (Raul ValdesPerez)
+Abstract: 
+<paragraph>Ok, I guess one needs to know the time/place also.</paragraph>
+
+<paragraph>The talk by Jonathan Minden is at 4pm this Friday, Dec. 6
+in 448 Mellon Institute.  The Mellon Institute is the massive
+building with the tall columns on 5th Avenue;  it houses
+Biology, Chemistry, Pgh Supercomputing Center, etc.
+<sentence>Raul </sentence></paragraph>

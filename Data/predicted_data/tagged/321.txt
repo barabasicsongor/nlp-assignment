@@ -1,0 +1,65 @@
+<0.24.1.94.19.57.40.jkr@IUS5.IUS.CS.CMU.EDU.0>
+Type:     cmu.misc.environmentalhealthandsafety
+Topic:    EPP TALK: Household Demand for Garbage and Recycling Collection
+Dates:    27Jan94
+Time:     <stime>4:30 PM</stime>
+PostedBy: Julio Ken Rosenblatt on 24Jan94 at 19:57 from IUS5.IUS.CS.CMU.EDU
+Abstract: 
+
+ <paragraph>Begin Forwarded Message </paragraph>
+
+<paragraph>In article <+cmu.andrew.assocs.gso+ohF3hmi00UfAA0vFNd@andrew.cmu.edu>,
+TseSung Wu  writes:</paragraph>
+
+<paragraph>The next Engineering & Public Policy departmental seminar will take place</paragraph>
+
+                     Thursday, January 27 at <stime>4:30 pm</stime>, 
+             in the <location>EPP conference room, located in BH129</location>
+                         Professor Don Fullerton
+                               Heinz School
+              Household Demand for Garbage and Recycling Collection
+                    with the Start of a Price per Bag
+
+                        All are invited to attend
+
+<paragraph>This paper estimates household reaction to the implemenation of a
+volumebased pricing program for the collecion of residential garbage. 
+We gather original data on weight and volume of weekly garbage and
+recycling of 75 households in Charlottesville, Virgina, both before and
+after the implementation of a program which requires an eightycent
+sticker on each bag of garbage.  <sentence>This data set is the first of its kind. </sentence>
+ We estimate household demands for the collection of garbage and
+recyclable material, the effect on the density of household garbage,
+and the amount of illegal dumping conducted by housholds.  We also employ
+a basic probit model to estimate the probability that a househod chooses
+each of several methods available to reduce their garbage.</paragraph>
+
+<paragraph>In response to the implementation of this volumebased pricing program,
+we find that households (1) reduced the weight of their garbage by
+14.0, (2) reduced the volume of garbage by 37.0 and (3) increased the
+weight of their recyclable materials by 15.7.  We estimate that
+additional illegal  or at least suspicious  disposal accounts for
+0.486 pounds per week per person in Charlottesville, or 32 of the total
+reduction in garbage observed at the curb.</paragraph>
+
+<paragraph>Refreshments</paragraph>
+
+<paragraph>Also, please note the next seminar is scheduled for </paragraph>
+
+                          Thursday, February 3, 1994
+                               <speaker>Dr. Daniel Reed</speaker>
+                          PostDoctoral Researcher
+                               Dept. of EPP 
+
+                           "Predicting Preferences"
+
+<paragraph>Upcoming...</paragraph>
+
+<paragraph>February 10: Milind Kandlikar, PhD Candidate, EPP
+February 17: <speaker>Lara Wolfson</speaker>, PhD Candidate, Statistics
+February 24: TBA </paragraph>
+
+
+Please direct all inquiries to TseSung (tw1u) or Charlie (cl3e)
+
+ End Forwarded Message

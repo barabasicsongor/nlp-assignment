@@ -1,0 +1,42 @@
+<0.6.12.94.16.19.21.plp+@HOSTESS.GRAPHICS.CS.CMU.EDU (Phyllis Pomerantz).0>
+Type:     Special CS Seminar
+Who: <speaker>Jerome Feldman, ICSI and UC Berkeley</speaker>
+Topic:    pSather 1.0  A Simpler Second System
+Dates:    7Dec94
+Time:     <stime>1:00 PM</stime>
+Place: <location>4615A Wean Hall</location>
+Duration: 1 1/2 hours
+Host:     Jon A Webb 
+PostedBy: plp+ on 6Dec94 at 16:19 from HOSTESS.GRAPHICS.CS.CMU.EDU (Phyllis Pomerantz)
+Abstract: 
+
+ <paragraph>Type:     Special CS Seminar
+ Who:      <speaker>Jerome Feldman, ICSI and UC Berkeley</speaker>
+ Topic:    pSather 1.0  A Simpler Second System
+ Dates:    7Dec94
+ Time:     1 p.m.
+ Place:    <location>4615A Wean Hall</location>
+ Duration: 1 1/2 hours
+ Host:     Jon A Webb </paragraph>
+
+               pSather 1.0  A Simpler Second System
+
+                        Jerome Feldman
+         International Computer Science Institute and UC Berkeley
+
+<paragraph>pSather is a set of parallel and distributed extensions to the
+objectoriented serial language Sather. After some years of internal
+experience with implementations and applications, the pSather 1.0 system is
+being developed for portability and general distribution.  pSather addresses
+NUMA architectures such as networks of workstations, but provides a relaxed
+consistency sharedmemory model to the programmer. A goal of the language is
+to suport the construction of efficient reusable classes in which the
+parallelism is implicit to the user.  Explicit language support is provided
+for objects spread over nodes at the same local address and for parallel and
+distributed control regimes.  A distinguished class GATE generalizes
+previous lowlevel synchronization mechanisms such as locks, futures and
+conditions.  The objectorientation of pSather allows users to define other
+synchronization classes which are easy to use, safe, fair, and difficult to
+deadlock.  Objectorientation also facilitates the construction of efficient
+scalable data structures by allowing reuse of serial code distributed over
+the system without an implicit synchronization penalty.</paragraph>

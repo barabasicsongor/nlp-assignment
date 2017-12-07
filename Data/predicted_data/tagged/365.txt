@@ -1,0 +1,36 @@
+<1.2.12.93.14.02.40.patty+@IUS5.IUS.CS.CMU.EDU (Patricia Mackiewicz).0>
+Type:     cmu.cs.robotics
+Who: <speaker>Alex Pentland</speaker>
+          Perceptual Computing Section, The Media Laboratory 
+          Massachusetts Institute of Technology
+          Room E15387, 20 Ames Street, Cambridge MA 02139
+Topic:    MULTIPLEMODEL MACHINE VISION
+Dates:    14Dec93
+Time:     2:00  <stime>3:30 PM</stime>
+Place: <location>WeH 4601</location>
+PostedBy: patty+ on 2Dec93 at 14:02 from IUS5.IUS.CS.CMU.EDU (Patricia Mackiewicz)
+Abstract: 
+
+
+ <paragraph>Date:  		Tuesday, December 14, 1993
+ Time:		<stime>23:30 pm</stime>
+ Place:		<location>WeH 4601</location></paragraph>
+
+ Speaker:	<speaker>Alex Pentland</speaker>
+ 		Perceptual Computing Section, The Media Laboratory 
+ 		Massachusetts Institute of Technology
+ 		Room E15387, 20 Ames Street, Cambridge MA 02139
+
+ Title: 	MULTIPLEMODEL MACHINE VISION
+
+<paragraph>Images are fundamentally inhomogeneous, yet most machine vision work has
+been based on homogeneous processing using a single type of image model.  We
+have developed a framework for inhomogeneous, multiplemodel machine vision
+using a Minimum Description Length (MDL)/Maximum A Posteriori (MAP)
+selection criterion.  I will talk about how we have applied this framework
+to the problem of multipleobject structure/egomotion from uncalibrated
+video, and the problem of object recognition using 2D aspect models.</paragraph>
+
+
+If you would like to make an appointment with Alex please feel free to contact
+Patty Mackiewicz via email (patty@cs).

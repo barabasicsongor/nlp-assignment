@@ -1,0 +1,19 @@
+<0.13.11.90.14.57.36.Terri.Stankus@B.GP.CS.CMU.EDU.0>
+Type:     cmu.cs.scs
+Who: <speaker>Ronald Rivest, MI questions or comments for Ron.</speaker>
+Topic:    Ron RivestDistingished Lecture Serieswed
+Dates:    14Nov90
+Time:     <stime>3:30 PM</stime>
+Place: <location>7500 WeH</location>
+PostedBy: Terri.Stankus on 13Nov90 at 14:57 from B.GP.CS.CMU.EDU
+Abstract: 
+
+<paragraph>Just a reminder:</paragraph>
+
+ Date:	This wednesday, November 14th
+ time:	<stime>3:30 p.m</stime>.
+ place:	<location>7500 WeH</location>
+
+ EVENT:		DISTINGUISHED LECTURE SERIES
+
+ SPEAKER:	<speaker>Ronald Rivest, MI questions or comments for Ron.</speaker>

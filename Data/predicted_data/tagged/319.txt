@@ -1,0 +1,58 @@
+<0.5.4.91.09.34.24.L.R.AdkinsShellie@B.GP.CS.CMU.EDU.0>
+Type:     cmu.cs.robotics
+Who:      Professor Hirofumi Miura,
+          Mechanical Engineering Department & Information  Engineering Course,
+          The University of Tokyo
+Topic:    Dexterity and Intelligence in Robotic Systems
+Dates:    5Apr91
+Time:     <stime>3:30 PM</stime>
+Place: <location>Baker Hall, Adamson Wing</location>
+Host:     <speaker>Michael Erdmann</speaker>, x7883
+PostedBy: L.R.AdkinsShellie on 5Apr91 at 09:34 from B.GP.CS.CMU.EDU
+Abstract: 
+
+
+ <paragraph>Speaker:  Professor Hirofumi Miura,
+           Mechanical Engineering Department & Information  Engineering Course,
+           The University of Tokyo
+ Title:    Dexterity and Intelligence in Robotic Systems
+ Date:     April 5, 1991
+ Time:     <stime>3:30 p.m</stime>. <sentence>until 4:30 p.m. </sentence>
+ Location: <location>Baker Hall, Adamson Wing</location>
+ Host:     <speaker>Michael Erdmann</speaker>, x7883</paragraph>
+
+<paragraph>There are many kinds of dexterous tasks which can be done easily by skilled
+persons, but which cannot be clearly expressed by algorithms.  When
+attempting to apply robots to these kinds of tasks, one finds that it is
+very difficult to write control programs for robots.</paragraph>
+
+<paragraph>I will discuss the dynamics and control of intelligent robots, for such
+dexterous tasks, which have been developed in our laboratory. These robots
+ include: </paragraph>
+
+ 	a cup and ball game playing robot(KENDAMA robot),
+ 	a topspinning robot(KOMAMAWASHI robot),
+ 	a stiltstype biped robot(TAKEUMA robot),
+ 	a quadruped robot,
+ 	and learning control of inverted pendulum.
+
+<paragraph>Through these systems, we try to demonstrate how one can write control
+programs for intelligent robots.</paragraph>
+
+<paragraph>An example of intelligent control for dexterous robots is our topspinning
+robot system.  I am able to spin a top, yet I can not explain "how" I can
+spin a top. My brother showed me how to spin a top, and I learned the ropes
+(KOTSU in Japanese) of topspinning by myself.  My brother simply told me
+"Wind a string on a top, hold one end of a string, throw a top and draw back 
+a string at a good timing".  Our robot system learns the ropes of 
+topspinning by obvserving a human performing the action through video camera 
+and creates the control program to spin the top based on the observation.  
+<sentence>Our robot is able to spin a top successfully. </sentence> </paragraph>
+
+<paragraph>In the talk, video demonstrations of several of our robot systems will be
+presented.</paragraph>
+
+
+<sentence>Refreshments will be served from 3:153:30. </sentence>  
+<sentence>Discussion and questions:  4:305:00. </sentence>
+<sentence>Everyone in the CMU community is invited to attend. </sentence>

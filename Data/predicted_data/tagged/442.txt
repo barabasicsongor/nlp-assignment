@@ -1,0 +1,44 @@
+<0.13.4.95.03.24.17.me@H.GP.CS.CMU.EDU (<speaker>Michael Erdmann</speaker>).0>
+Type:     cmu.cs.robotics
+Topic:    Upcoming Robotics Seminars: Apr 14 none; Apr 21 Shree Nayar.
+Dates:    21Apr95
+Time:     3:30  5:00
+Host:     Katsushi Ikeuchi, x86349
+PostedBy: me on 13Apr95 at 03:24 from H.GP.CS.CMU.EDU (<speaker>Michael Erdmann</speaker>)
+Abstract: 
+<paragraph>There is no Robotics Seminar this Friday.
+Next Friday's seminar will be:</paragraph>
+
+
+			   ROBOTICS SEMINAR
+
+<paragraph>Friday April 21, 3:305:00
+Refreshments 3:15
+<location>Adamson Wing</location>, Baker Hall
+	           RealTime Focus Range Sensor
+		   </paragraph>
+
+			  Shree K. Nayar
+
+ 		   Department of Computer Science
+			Columbia University
+			New York, NY 10027
+
+<paragraph>Structures of dynamic scenes can only be recovered using a realtime
+range sensor. Depth from defocus  offers an elegant solution to fast
+and dense range estimation. It is computational efficient as it
+circumvents the correspondence problem faced by stereo and the feature
+tracking problem involved in structure from motion. However, accurate
+depth estimation requires theoretical and practical solutions to a
+variety of problems including  recovery of textureless surfaces,
+blur estimation, and magnification variations caused by defocusing. 
+Both textured and textureless surfaces are recovered using an
+optimized illumination pattern that is projected via the same optical
+path used to acquire images. A prototype focus range sensor has been
+developed that produces up to 512x480 depth estimates at 30 Hz with
+an accuracy of 0.3.</paragraph>
+
+<paragraph>In addition to the above topic, I'll briefly summarize recent results
+on diffuse reflectance and visual learning.</paragraph>
+
+ <sentence>Host: Katsushi Ikeuchi, x86349 </sentence>
