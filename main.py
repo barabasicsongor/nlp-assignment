@@ -1,5 +1,7 @@
 import itertools
-from io_manager import read_emails
+import re
+import pprint
+from io_manager import read_emails, write_emails
 from mail import Email
 from pos_tagger import POSTagger
 from ner_tagger import NERTagger
@@ -12,6 +14,8 @@ from sent_tagger import tag_sents
 from paragraph_tagger import tag_paragraphs
 from eval import evaluate, calculateScore
 from extractor import extract_tags
+from ontology import get_important_words, classify_emails
+from gensim.models import KeyedVectors
 
 if __name__ == '__main__':
   EMAILS_TRAIN_PATH         = './Data/training/'
@@ -33,12 +37,12 @@ if __name__ == '__main__':
 
   # NERTagger usage. Train it or wait for it to load from disk
   # You must have the GMB dataset in the Data folder to be able to train
-  ner_dataset = read_gmb_ner(GMB_CORPUS_ROOT)
+  # ner_dataset = read_gmb_ner(GMB_CORPUS_ROOT)
   ner = NERTagger(feature_detector=ner_features)
   # ner.train(itertools.islice(ner_dataset, 50000), path='./Data/models/ner_tagger.pkl', batch_size=500, n_iter=5)
   ner.load_ner_tagger(NER_TAGGER_PATH)
   # accuracy = ner.score(itertools.islice(ner_dataset, 5000))  # 0.970287054168
-  # print(accuracy)
+  # print("NER Tagger Accuracy: {}".format(accuracy))
 
   # Testing of tagging
 
@@ -66,5 +70,16 @@ if __name__ == '__main__':
     fn = fn + nfn
 
   precision, recall, fscore = calculateScore(tp, fp, fn)
+  print("Precision: {}".format(precision))
+  print("Recall: {}".format(recall))
+  print("F1-Score: {}".format(fscore))
+  
+  # Get the least frequent words from the training set they will be also saved to files
+  # get_important_words(emails_train)
 
+  # Initializing Gensim
+  model = KeyedVectors.load_word2vec_format('./Data/GoogleNews-vectors-negative300.bin', binary=True)
+  ontology_classification = classify_emails(model, emails_test_untagged)
 
+  pp = pprint.PrettyPrinter(indent=4)
+  pp.pprint(ontology_classification)
