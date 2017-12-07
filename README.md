@@ -1,3 +1,5 @@
+Report of the system can be found in the documents folder, separately for part 1 and 2. There is also a file showing the result of the ontology classification in case you don't want to run it.
+
 Run main.py in order to run the application.
 
 All the code to run the full system is in the main file, but some of them are commented, because there are certain datasets that are needed in order to run properly.
