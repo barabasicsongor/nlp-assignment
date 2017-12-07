@@ -77,9 +77,9 @@ if __name__ == '__main__':
   # Get the least frequent words from the training set they will be also saved to files
   # get_important_words(emails_train)
 
-  # Initializing Gensim
-  model = KeyedVectors.load_word2vec_format('./Data/GoogleNews-vectors-negative300.bin', binary=True)
-  ontology_classification = classify_emails(model, emails_test_untagged)
+  # Initializing Gensim. Uncomment the lines below to run ontology classification
+  # model = KeyedVectors.load_word2vec_format('./Data/GoogleNews-vectors-negative300.bin', binary=True)
+  # ontology_classification = classify_emails(model, emails_test_untagged)
 
-  pp = pprint.PrettyPrinter(indent=4)
-  pp.pprint(ontology_classification)
+  # pp = pprint.PrettyPrinter(indent=4)
+  # pp.pprint(ontology_classification)
