@@ -15,7 +15,7 @@ def tag_sents(email):
 
   body = email.body
   for s in body_sents:
-    if not s.startswith(' '):
+    if (not s.startswith(' ')) and s[0].isalnum():
       ns = '<sentence>' + s + ' </sentence>'
       body = body.replace(s,ns)
 

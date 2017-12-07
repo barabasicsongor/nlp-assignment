@@ -36,15 +36,16 @@ def tag_speaker(email,pos_tagger_path,ner_tagger_path):
 
   try:
 
-    for s in speakers:
-      if s in header:
-        ns = '<speaker>' + s + '</speaker>'
-        header = re.sub(s,ns,header)
-        found = True
-      if s in body:
-        ns = '<speaker>' + s + '</speaker>'
-        body = re.sub(s,ns,body)
-        found = True
+    line = re.findall(reg_line, header)
+
+    if len(line) > 0:
+      line = line[0]
+      for s in speakers:
+        if s in line:
+          ns = '<speaker>' + s + '</speaker>'
+          header = re.sub(s,ns,header)
+          body = re.sub(s,ns,body)
+          found = True
 
     if not found:
       # Get line which contains time info
