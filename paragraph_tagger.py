@@ -7,10 +7,13 @@ def tag_paragraphs(email):
   body = email.body[9:].strip()
 
   body_split = body.split('\n\n')
+  body_split = [b for b in body_split if b != '']
 
-  body = "Abstract:\n"
+  body = email.body
 
   for s in body_split:
-    body += '<paragraph>' + s.strip() + '</paragraph>'
+    if (not s.startswith(' ')) and s[0].isalnum():
+      ns = '<paragraph>' + s + '</paragraph>'
+      body = body.replace(s,ns)
 
   return Email(email.header, body, email.fileid)

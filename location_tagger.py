@@ -46,12 +46,13 @@ def tag_location(email):
   file = open('./Data/locations.txt', 'r')
   locations = file.readlines()
   locations = [x.strip() for x in locations]
+  file.close()
 
   body = email.body
 
   for l in locations:
     if l in body:
       loc = '<location>' + l + '</location>'
-      body = body.sub(l,loc,body)
+      body = re.sub(l,loc,body)
 
   return Email(header, body, email.fileid)

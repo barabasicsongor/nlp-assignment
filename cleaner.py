@@ -29,6 +29,12 @@ def clean(text):
 
   while(re.search(r'\|\|*', text)):
     text = re.sub(r'\|\|*', '', text, re.M)
+  
+  while(re.search(r']]*', text)):
+    text = re.sub(r']]*', '', text, re.M)
+
+  while(re.search(r'\[\[*', text)):
+    text = re.sub(r'\[\[*', '', text, re.M)
 
   return text
 

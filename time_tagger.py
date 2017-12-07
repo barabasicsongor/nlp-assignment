@@ -20,7 +20,7 @@ def tag_time(email):
   header = email.header
   body = email.body
 
-  reg_time = r'\b([0-9]+:[0-9][0-9] +[APap]\.?[mM])\b'
+  reg_time = r'\[0-9]+:[0-9][0-9]|[0-9]+:[0-9][0-9] +[APap]\.?[mM]'
   reg_line = r'Time.*\n'
 
   # Tag header

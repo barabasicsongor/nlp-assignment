@@ -5,8 +5,6 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.feature_extraction import DictVectorizer
 from sklearn.pipeline import Pipeline
 
-POS_TAGGER_PATH = './Data/models/pos_tagger_dt.pkl'
-
 class POSTagger:
 
   def __init__(self):
@@ -67,8 +65,8 @@ class POSTagger:
   """
   Loads the POS tag classifier from file
   """
-  def load_pos_tagger(self):
-    model_pkl = open(POS_TAGGER_PATH, 'rb')
+  def load_pos_tagger(self, path):
+    model_pkl = open(path, 'rb')
     clf = pickle.load(model_pkl)
     self.classifier = clf
 
@@ -77,7 +75,7 @@ class POSTagger:
   and returns it.
   If save == True, then the classifier is saved to file
   """
-  def train_pos_tagger(self):
+  def train_pos_tagger(self, path):
     tagged_sents = treebank.tagged_sents()
 
     train_size = int(.75 * len(tagged_sents))
@@ -99,7 +97,7 @@ class POSTagger:
     print('Accuracy: {}'.format(clf.score(X_test, y_test)))
 
     # Save model to file
-    model_pkl = open(POS_TAGGER_PATH, 'wb')
+    model_pkl = open(path, 'wb')
     pickle.dump(clf, model_pkl)
     model_pkl.close()
 
